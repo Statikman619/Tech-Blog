@@ -27,3 +27,26 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+//Render individual articles for update to their own pages
+router.get("/articles/:id", async (req, res) => {
+  console.log(req.body);
+  try {
+    const ArticleData = await Article.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+        },
+      ],
+    });
+
+    const article = ArticleData.get({ plain: true });
+
+    res.render("articles", {
+      article,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
