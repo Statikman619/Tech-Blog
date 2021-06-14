@@ -72,3 +72,27 @@ router.get("/signup", (req, res) => {
 
   res.render("signup");
 });
+
+//logout router
+router.get("/dashboard", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (!req.session.loggedIn) {
+    res.redirect("/login");
+    return;
+  }
+
+  res.render("dashboard");
+  logged_in: req.session.logged_in;
+});
+
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+module.exports = router;
