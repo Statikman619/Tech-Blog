@@ -1,0 +1,14 @@
+/* tech blog */
+
+header {
+  background-color: lightblue;
+}
+
+main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.comment-card {
+  width: 80%;
+}
