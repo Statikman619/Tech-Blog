@@ -26,15 +26,19 @@
               <li class="nav-item">
                 <a class="nav-link" href="/dashboard">Dashboard</a>
               </li>
+              {{#unless logged_in}}
               <li class="nav-item"></li>
                 <a class="nav-link" href="/login">Login</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/signup">Signup</a>
               </li>
+              {{/unless}}
+              {{#if logged_in}}
               <li class="nav-item">
                 <button class="nav-link shadow-none" id='logout'>Logout</button>
               </li>
+              {{/if}}
               
               
         </div>

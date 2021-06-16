@@ -4,15 +4,23 @@
     <h5 class="card-title bg-primary text-light p-3">Update Article</h5>
     <form class='form update-form'>
       <div class="mb-3">
-        <label for="update-title" class="form-label">{{article.title}}</label>
+        <label for="update-title" class="form-label">Title</label>
         <input type="text" class="form-control" id="update-title" aria-describedby="userNameHelp" value='{{article.title}}'>
       </div>
       <div class="mb-3">
-        <label for="update-content" class="form-label">{{article.content}}</label>
+        <label for="update-content" class="form-label">Content</label>
         <textarea class="form-control" id="update-content">{{article.content}}
         </textarea>
       <button type="submit" class="btn btn-primary mt-2">Update Article</button>
       <button type="submit" class="btn btn-danger mt-2 deleteBtn">Delete Article</button>
+    </form>
+
+    <form class='form comment-form'>
+      <div class="mb-3">
+        <label for="add-comment" class="form-label">Comment</label>
+        <textarea class="form-control" id="add-comment">
+        </textarea>
+      <button type="submit" id="new-comment" class="btn btn-primary mt-2">Add Comment</button>
     </form>
     
   </div>

@@ -10,6 +10,7 @@ router.post("/signup", async (req, res) => {
     });
 
     req.session.save(() => {
+      req.session.logged_in = true;
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
@@ -46,6 +47,7 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.logged_in = true;
       req.session.loggedIn = true;
 
       res

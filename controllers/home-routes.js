@@ -54,7 +54,7 @@ router.get("/articles/:id", async (req, res) => {
 //login router
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect("/");
     return;
   }
@@ -65,7 +65,7 @@ router.get("/login", (req, res) => {
 //signup router
 router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect("/");
     return;
   }
@@ -76,17 +76,18 @@ router.get("/signup", (req, res) => {
 //logout router
 router.get("/dashboard", (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (!req.session.loggedIn) {
+  if (!req.session.logged_in) {
     res.redirect("/login");
     return;
   }
 
-  res.render("dashboard");
-  logged_in: req.session.logged_in;
+  res.render("dashboard", {
+    logged_in: req.session.logged_in,
+  });
 });
 
 router.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });
