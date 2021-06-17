@@ -41,7 +41,7 @@ router.get("/articles/:id", async (req, res) => {
     });
 
     const article = ArticleData.get({ plain: true });
-
+    console.log(article);
     res.render("articles", {
       article,
       logged_in: req.session.logged_in,
