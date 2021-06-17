@@ -14,17 +14,16 @@
       <button type="submit" class="btn btn-primary mt-2">Update Article</button>
       <button type="submit" class="btn btn-danger mt-2 deleteBtn">Delete Article</button>
     </form>
-
-    <form class='form comment-form'>
+    <form id="new-comment-form" class='form comment-form'>
       <div class="mb-3">
+        <input type="hidden" name="post-id" value="{{article.id}}" />
         <label for="add-comment" class="form-label">Comment</label>
         <textarea class="form-control" id="add-comment">
         </textarea>
       <button type="submit" id="new-comment" class="btn btn-primary mt-2">Add Comment</button>
     </form>
-    
   </div>
 </div>
-
 <script src='/scripts/update.js'></script>
+<script src='/scripts/comments.js'></script>
 <script src='/scripts/delete.js'></script>
