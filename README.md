@@ -1,5 +1,8 @@
 # Tech Blog
 
+GitHubLink https://github.com/Statikman619/Tech-Blog
+KerokuLink https://pacific-ridge-11967.herokuapp.com/
+
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Table of Contents
 * [Title](#Title)
