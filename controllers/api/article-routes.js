@@ -28,6 +28,10 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
+    const isUser = await User.findByPk(req.session.id);
+    if (!isUser) {
+      res.status(403).json(isUser);
+    }
     const articleData = await Article.update(
       {
         title: req.body.title,
