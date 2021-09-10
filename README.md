@@ -17,7 +17,8 @@ KerokuLink https://pacific-ridge-11967.herokuapp.com/
 ## Description
 This app  is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
 ## Installation 
-Install all the necessary packages in the command line.
+Clone this repository to receive all my files. Once you have my code make sure you are in the correct file directory.
+in the command line run "npm install" in the terminal to download all the needed dependencies.
 ## Usage 
 The user can publish articles, blog posts, and thoughts and opinions.
 ## License MIT
